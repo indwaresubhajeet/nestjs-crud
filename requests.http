@@ -1,0 +1,67 @@
+### Register a new user
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+
+### Login with user credentials
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+
+
+### Get current user profile (protected route)
+GET http://localhost:3000/users/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOiI2ODE5YmQ2MmJlYjk4MjYxNGFiZDJkYTgiLCJpYXQiOjE3NDY1MTczNTYsImV4cCI6MTc0NjYwMzc1Nn0.BABMZHf09IB5RR-hFCIO4OVlEr1VRHuuf22-5IA_2l8
+
+
+### Get all users (protected route)
+GET http://localhost:3000/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOiI2ODE5YmQ2MmJlYjk4MjYxNGFiZDJkYTgiLCJpYXQiOjE3NDY1MTczNTYsImV4cCI6MTc0NjYwMzc1Nn0.BABMZHf09IB5RR-hFCIO4OVlEr1VRHuuf22-5IA_2l8
+
+
+### Get all tasks for current user (protected route)
+GET http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOiI2ODE5YmQ2MmJlYjk4MjYxNGFiZDJkYTgiLCJpYXQiOjE3NDY1MTczNTYsImV4cCI6MTc0NjYwMzc1Nn0.BABMZHf09IB5RR-hFCIO4OVlEr1VRHuuf22-5IA_2l8
+
+
+### Create a new task linked to current user (protected route)
+POST http://localhost:3000/tasks
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOiI2ODE5YmQ2MmJlYjk4MjYxNGFiZDJkYTgiLCJpYXQiOjE3NDY1MTczNTYsImV4cCI6MTc0NjYwMzc1Nn0.BABMZHf09IB5RR-hFCIO4OVlEr1VRHuuf22-5IA_2l8
+Content-Type: application/json
+
+{
+  "title": "Complete task 2",
+  "content": "Finish implementation of task 2"
+}
+
+
+### Get a specific task by ID for current user (protected route)
+GET http://localhost:3000/tasks/6819bd96beb982614abd2db4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOiI2ODE5YmQ2MmJlYjk4MjYxNGFiZDJkYTgiLCJpYXQiOjE3NDY1MTczNTYsImV4cCI6MTc0NjYwMzc1Nn0.BABMZHf09IB5RR-hFCIO4OVlEr1VRHuuf22-5IA_2l8
+
+
+### Update a task for current user (protected route)
+PATCH http://localhost:3000/tasks/6819bd96beb982614abd2db4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOiI2ODE5YmQ2MmJlYjk4MjYxNGFiZDJkYTgiLCJpYXQiOjE3NDY1MTczNTYsImV4cCI6MTc0NjYwMzc1Nn0.BABMZHf09IB5RR-hFCIO4OVlEr1VRHuuf22-5IA_2l8
+Content-Type: application/json
+
+{
+  "title": "Updated task title",
+  "content": "completed"
+}
+
+
+### Delete a task for current user (protected route)
+DELETE http://localhost:3000/tasks/6819bd96beb982614abd2db4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAZXhhbXBsZS5jb20iLCJzdWIiOiI2ODE5YmQ2MmJlYjk4MjYxNGFiZDJkYTgiLCJpYXQiOjE3NDY1MTczNTYsImV4cCI6MTc0NjYwMzc1Nn0.BABMZHf09IB5RR-hFCIO4OVlEr1VRHuuf22-5IA_2l8
+
+
